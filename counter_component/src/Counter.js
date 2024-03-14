@@ -1,5 +1,3 @@
-// Counter.js
-
 import React, { useState } from 'react';
 
 const Counter = () => {
@@ -15,10 +13,12 @@ const Counter = () => {
         }, 2000);
     };
 
-
+    const incrementTwice = () => {
+        setCount(count + 2);
+    };
 
     const correctIncrementTwice = () => {
-        setCount(prevCount => prevCount + 2); // Using state updater function
+        setCount((prevCount) => prevCount - 2);
     };
 
     return (
@@ -26,7 +26,7 @@ const Counter = () => {
             <h2>Count: {count}</h2>
             <button onClick={increment}>Increment</button>
             <button onClick={incrementAfterDelay}>Increment After Delay</button>
-
+            <button onClick={incrementTwice}>Increment Twice</button>
             <button onClick={correctIncrementTwice}>Correct Increment Twice</button>
         </div>
     );
